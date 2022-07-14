@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3, user-scalable=yes" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<script src="main.js"></script>
+	<title>COMMAND | EFFECT</title>
+</head>
+<body>
+	<div class="menu"></div>
+	<div id="huongdan">
+		<h2 id="title">Command | Effect</h2>
+		<div id="congdung">
+			<h2>Công dụng</h2>
+			<p>Lấp đầy khu vực với block đã định</p>
+		</div>
+		<div>
+			<h2>Cú pháp</h2>
+			<p>/fill &lt;from: x y z&gt; &lt;to: x y z&gt; &lt;tileName: Block&gt; &lt;blockStates: block states&gt; replace [replaceTileName: Block] [replaceBlockStates: block states]</p>
+			<p>/fill &lt;from: x y z&gt; &lt;to: x y z&gt; &lt;tileName: Block&gt; &lt;tileData: int&gt; replace [replaceTileName: Block] [replaceDataValue: int]</p>
+			<p>/fill &lt;from: x y z&gt; &lt;to: x y z&gt; &lt;tileName: Block&gt; [blockStates: block states] [oldBlockHandling: FillMode]</p>
+			<p>/fill &lt;from: x y z&gt; &lt;to: x y z&gt; &lt;tileName: Block&gt; [tileData: int] [oldBlockHandling: FillMode]</p>
+		</div>
+		<div>
+			<h2>Hướng dẫn thêm</h2>
+			<p>&lt;from: x y z&gt; là điểm bắt đầu</p>
+			<p>&lt;to: x y z&gt; là điểm kết thúc</p>
+			<p>&lt;tileName: block&gt; là khối để fill</p>
+			<p>&lt;tileData: int&gt;</p>
+			<p>&lt;blockSates: block sates&gt; giống như tileData giống một mã để định danh nhưng thay vào đấy là chữ, xem chi tiết tại: &lt;blockStates:</p>
+			<p>[oldBlockHandling: FillMode] là kiểu lấp đầy</p>
+			<div>
+				<p>replace là thay thế các khối trong [replaceTileName: Block]</p>
+				<p>destroy là phá hủy block giống như player đập block, item block sẽ được rơi ra</p>
+				<p>hollow là tạo một hình hộp có không khí bên trong</p>
+				<div>
+					<p>tất cả block bên trong khung sẽ được thay thế bằng không khí</p>
+				</div>
+				<p>outline là tạo hình hộp không có không khí bên trong</p>
+				<div>
+					<p>block bên trong sẽ không bị thay thế</p>
+				</div>
+				<p>keep là thay thế không khí thành khối [tileName: block], giữ lại block không phải là không khí</p>
+				<p></p>
+			</div>
+		</div>
+		<div>
+			<h2>Đối tượng có thể dùng</h2>
+			<p>Player có op</p>
+			<p>Owner</p>
+			<p>NPC</p>
+			<p>function</p>
+			<p>/execute</p>
+			<p>/gametest</p>
+			<p>Command block</p>
+		</div>
+	</div>
+</body>
+</html>

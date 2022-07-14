@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3, user-scalable=yes" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<script src="main.js"></script>
+	<title>COMMAND | CLONE</title>
+</head>
+<body>
+	<div class="menu"></div>
+	<div id="huongdan">
+		<h2 id="title">Command | Clone</h2>
+		<div id="congdung">
+			<h2>Công dụng</h2>
+			<p>Sao chép 1 hay nhiều khối từ một tọa độ này đến một tọa độ khác</p>
+		</div>
+		<div>
+			<h2>Cú pháp</h2>
+			<p>/clone &lt;begin: x y z&gt; &lt;end: x y z&gt; &lt;destination: x y z&gt; [maskMode: MaskMode] [cloneMode: CloneMode]</p>
+			<p>/clone &lt;begin: x y z&gt; &lt;end: x y z&gt; &lt;destination: x y z&gt; filtered [cloneMode: CloneMode] &lt;tileName: Block&gt; &lt;blockStates: block states&gt;</p>
+			<p>/clone &lt;begin: x y z&gt; &lt;end: x y z&gt; &lt;destination: x y z&gt; filtered [cloneMode: CloneMode] &lt;tileName: Block&gt; &lt;tileData: int&gt;</p>
+		</div>
+		<div>
+			<h2>Giải thích thêm</h2>
+			<p>[begin: x y z] và [end: x y z] là để xác định tọa độ sẽ sao chép, bạn cần sử dụng tọa độ của minecraft sao cho nó bao quanh khu vực cần sao chép</p>
+			<p>[destination: x y z] là tọa độ sẽ dán tọa độ đã sao chép</p>
+			<h2>Xác định hướng [destination: x y z]</h2>
+			<p>Để xác định hướng [destination: x y z] sẽ có 3 cách</p>
+			<p>+ Cách 1: Xác định hướng mặt trời mọc</p>
+			<p>Đầu tiên, bạn phải xác định được hướng đông (hướng mặt trời mọc), hướng destination sẽ là hướng mặt trời mọc và nằm bên phải của hướng đông</p>
+			<p>+ Cách 2: Sử dụng structure block</p>
+			<p>Bạn sử dụng lệnh: "/give @s structure_block" và sau đó đặt structure block xuống, hướng mà trục của structure block hướng sẽ là điểm [destination: x y z]</p>
+			<p>+ Cách 3: dùng tọa độ x y z</p>
+			<p>Bạn bật hiện tọa độ lên, chú ý đến tọa độ x,z sau đó bạn đi về một phía. Nếu tọa độ x tăng thì đấy là hướng mặt trời mọc, còn nếu z tăng thì bên trái là hướng mặt trời mọc, nếu tọa độ x giảm thì đằng sau là hướng mặt trời mọc, nếu tọa độ z giảm thì bên phải là hướng mặt trời mọc.</p>
+		</div>
+		<div>
+			<h2>Đối tượng có thể dùng</h2>
+			<p>Player có op</p>
+			<p>Owner</p>
+			<p>NPC</p>
+			<p>function</p>
+			<p>/execute</p>
+			<p>/gametest</p>
+			<p>Command block</p>
+		</div>
+	</div>
+</body>
+</html>

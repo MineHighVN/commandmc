@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3, user-scalable=yes" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css"></link>
+	<script src="main.js"></script>
+	<title>COMMAND | EFFECT</title>
+</head>
+<body>
+	<div class="menu"></div>
+	<div id="huongdan">
+		<h2 id="title">Command | Effect</h2>
+		<div id="congdung">
+			<h2>Công dụng</h2>
+			<p>Thêm hoặc xóa hiệu ứng cho người chơi hoặc mob với thời gian và cường độ cụ thể</p>
+		</div>
+		<div>
+			<h2>Cú pháp</h2>
+			<p>/effect &lt;entity: target&gt; &lt;effect: effect&gt; [seconds: int] [amplifier: int] [hideParticles: boolean]</p>
+			<p>/effect &lt;entity: target&gt; clear</p>
+		</div>
+		<div>
+			<h2>Hướng dẫn thêm</h2>
+			<p>&lt;entity: target&gt; là một người chơi hoặc mob</p>
+			<p>&lt;effect: effect&gt; là một hiệu ứng trong minecraft</p>
+			<p>[seconds: int] là thời gian của hiệu</p>
+			<p>[amplifier: int] là cường độ của hiệu ứng</p>
+			<p>[hideParticles: boolean] là có ẩn hiệu ứng đi không. Nếu giá trị là true thì những hiệu ứng (bong bóng hiệu ứng) sẽ không hiện nữa. Mặc định là false</p>
+			<p>/effect clear là xóa tất cả hiệu ứng của player hoặc của mob.</p>
+
+		</div>
+		<div>
+			<h2>Danh sách hiệu ứng</h2>
+			<table>
+				<tr>
+					<th>Tên hiệu ứng</th>
+					<th>Công dụng</th>
+				</tr>
+				<tr>
+					<td>absorption</td>
+					<td>cung cấp cho người chơi/mob một lượng máu nhất định nhưng không thể hồi được</td>
+				</tr>
+				<tr>
+					<td>bad_omen</td>
+					<td>là một hiệu ứng gây ra cược đột kích xuất hiện khi một người chơi dính hiệu ứng vào làng</td>
+				</tr>
+				<tr>
+					<td>blindness</td>
+					<td>cản trờ tầm nhìn của người chơi, gây ra cho người chơi hiệu ứng mù lòa</td>
+				</tr>
+				<tr>
+					<td>clear</td>
+					<td>xóa tất cả hiệu ứng của người chơi hoặc mob</td>
+				</tr>
+				<tr>
+					<td>conduit_power</td>
+					<td>là hiệu ứng giúp bạn có thể đào nhanh, nhìn trong bóng tối, thở dưới nước</td>
+				</tr>
+				<tr>
+					<td>darkness</td>
+					<td>giống hiệu ứng blindness</td>
+				</tr>
+				<tr>
+					<td>fatal_poison</td>
+					<td>giống hiệu ứng poison</td>
+				</tr>
+				<tr>
+					<td>fire_resistance</td>
+					<td>giúp người chơi kháng lửa, lava</td>
+				</tr>
+				<tr>
+					<td>haste</td>
+					<td>tăng tốc độ đào cho người chơi</td>
+				</tr>
+				<tr>
+					<td>health_boost</td>
+					<td>tăng số lượng máu cho người chơi, có thể hồi lại được máu nhưng khi hết thời gian, số lượng máu đấy sẽ biến mất</td>
+				</tr>
+				<tr>
+					<td>hunger</td>
+					<td>hiệu ứng khiến cho bạn bị đói</td>
+				</tr>
+				<tr>
+					<td>instant_damage</td>
+					<td>hiệu ứng khiến cho bạn bị mất máu ngay lập tức</td>
+				</tr>
+				<tr>
+					<td>instant_health</td>
+					<td>hiệu ứng giúp bạn hồi máu tức thì</td>
+				</tr>
+				<tr>
+					<td>invisibility</td>
+					<td>hiệu ứng giúp cho bạn tàng hình</td>
+				</tr>
+				<tr>
+					<td>jump_boost</td>
+					<td>cho người chơi hiệu ứng nhảy cao</td>
+				</tr>
+				<tr>
+					<td>levitation</td>
+					<td>hiệu ứng làm cho bạn bay lên nhưng không thể hạ cánh cho đến khi hết hiệu ứng</td>
+				</tr>
+				<tr>
+					<td>mining_fatigue</td>
+					<td>khiến người chơi đào chậm lại</td>
+				</tr>
+				<tr>
+					<td>nausea</td>
+					<td>gây ra hiệu ứng chóng mặt cho người chơi</td>
+				</tr>
+				<tr>
+					<td>night_vision</td>
+					<td>hiệu ứng này cho phép người chơi nhìn vào ban đêm</td>
+				</tr>
+				<tr>
+					<td>poison</td>
+					<td>hiệu ứng này gây độc cho người chơi/mob</td>
+				</tr>
+				<tr>
+					<td>regeneration</td>
+					<td>hồi máu nhanh cho người chơi/mob</td>
+				</tr>
+				<tr>
+					<td>resistance</td>
+					<td>giảm sát thương khi bị tấn công/rơi cho người chơi/mob</td>
+				</tr>
+				<tr>
+					<td>saturation</td>
+					<td>là hiệu ứng giúp người chơi không bị đói</td>
+				</tr>
+				<tr>
+					<td>slow_falling</td>
+					<td>giảm tốc độ khi rơi cho người chơi và không gây mất máu khi rơi</td>
+				</tr>
+				<tr>
+					<td>speed</td>
+					<td>tăng tốc độ cho người chơi</td>
+				</tr>
+				<tr>
+					<td>strength</td>
+					<td>tăng sức mạnh cho người chơi</td>
+				</tr>
+				<tr>
+					<td>village_hero</td>
+					<td>là hiệu ứng giúp bạn mua những đồ của dân làng rẻ hơn</td>
+				</tr>
+				<tr>
+					<td>water_breathing</td>
+					<td>hiệu ứng giúp bạn thở dưới nước</td>
+				</tr>
+				<tr>
+					<td>weakness</td>
+					<td>hiệu ứng làm cho bạn giảm sát thương của bạn khi đánh người chơi khác</td>
+				</tr>
+				<tr>
+					<td>wither</td>
+					<td>là hiệu ứng khiến bạn mất máu</td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<h2>Đối tượng có thể dùng</h2>
+			<p>Player có op</p>
+			<p>Owner</p>
+			<p>NPC</p>
+			<p>function</p>
+			<p>/execute</p>
+			<p>/gametest</p>
+			<p>Command block</p>
+		</div>
+	</div>
+</body>
+</html>
